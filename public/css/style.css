@@ -3,13 +3,18 @@
   transform: rotate(-90deg);
     }
 }
-.card-cont {
-	list-style-type: none;
+
+body {
+    background-color: #f3f3fd;
 }
+
 #ul_search_videos {
 	margin-right: 0px;
     margin-left: 0px;
     padding-left: 0px;
+}
+.card-cont {
+    list-style-type: none;
 }
 div.col-xs-4.col-sm-12.image-column {
 	padding-left: 5px;
@@ -22,3 +27,4 @@ li.card-cont.col-xs-12.col-sm-6.col-md-4 {
 a.ytp-title-link.yt-uix-sessionlink {
     href: "";
 }
+
