@@ -8,10 +8,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/login_style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/js/script.js"></script>
+
 </head>
 
 <body>
@@ -19,7 +21,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/" style="color:#B9C7FF">
-        <font size="5">
+        <font size="3">
         ИННОРЫНОК | Образование 
         <span class="glyphicon glyphicon-education"></span>
         </font>
@@ -29,8 +31,8 @@
     <ul class="nav navbar-nav">
 
        <li class="dropdown">
-       <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#B9C7FF">
-       <font size="5">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#11ffc9">
+       <font size="3">
        Курсы и уроки
        <span class="glyphicon glyphicon-menu-hamburger"></span>
        </font>
@@ -41,13 +43,22 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Языки программирования <b class="caret"></b></a>
 
             <ul class="dropdown-menu">
-                <li><a href="#">Java</a></li>
+<!--            <li><a href="#">Java</a></li>
                 <li><a href="#">Python</a></li>
                 <li><a href="#">C++</a></li>
                 <li><a href="#">C</a></li>
                 <li><a href="#">C#</a></li>
-                <li><a href="#">Ruby</a></li>
-                <li>
+                <li><a href="#">Ruby</a></li>                               -->
+                <li><a href="/программирование/php/.">PHP</a></li>
+                <li><a href="/программирование/javascript/.">JavaScript</a></li>
+            </ul>
+          </li>
+<!--    </ul>
+      </li>
+    </ul>
+
+
+ 
                   <a href="/программирование/php" class="dropdown-toggle" data-toggle="dropdown">PHP<b class="caret"></b></a>
 
                     <ul class="dropdown-menu">
@@ -80,7 +91,15 @@
                 </li>
             </ul>
           </li>
+-->          
+           <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Менеджмент <b class="caret"></b></a>
 
+            <ul class="dropdown-menu">
+                <li><a href="/менеджмент/продукт/.">Управление продуктом </a></li>
+            </ul>
+          </li>         
+<!--  
           <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Бизнес <b class="caret"></b></a>
 
@@ -90,12 +109,13 @@
                 <li><a href="#">Маркетинг</a></li>
             </ul>
           </li>
-
+--> 
         </ul>
       </li>
     </ul>
 
-<!--     
+<!-- 
+   
     <form action="/search" method="POST" id="simple_search" class="navbar-form navbar-left">
       <div class="form-group">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
@@ -107,13 +127,12 @@
 -->
 
 
-
     <ul class="nav navbar-nav navbar-right">
 
     <!-- Authentication Links -->
     @if ($authData['logged_in'] !== true)
 
-      <li><a href="#" data-toggle="modal" data-target="#login-modal" style="color:#01DF3A"><font size="5"><span class="glyphicon glyphicon-log-in"></span> Войти</font></a></li>
+      <li><a href="#" data-toggle="modal" data-target="#login-modal" style="color:#01DF3A"><font size="3"><span class="glyphicon glyphicon-log-in"></span> Войти</font></a></li>
 
       <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
@@ -129,7 +148,7 @@
         </div>
       </div>
 
-      <li><a href="#" data-toggle="modal" data-target="#register-modal" style="color:#FF8000"><font size="5"><span class="glyphicon glyphicon-user"></span> Зарегистрироваться</font></a></li>
+      <li><a href="#" data-toggle="modal" data-target="#register-modal" style="color:#FF8000"><font size="3"><span class="glyphicon glyphicon-user"></span> Зарегистрироваться</font></a></li>
 
       <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
@@ -147,36 +166,11 @@
   
   @else
       
-      <li><a href="/user-profile" style="color:#01DF3A"><font size="5"><span class="glyphicon glyphicon-book"></span> Дневник {{$authData['login']}}</font></a></li>
-      <li><a href="/logout" style="color:#B22222"><font size="5"><span class="glyphicon glyphicon-log-in"></span> Выйти </font></a></li>
+      <li><a href="/user-profile" style="color:#01DF3A"><font size="3"><span class="glyphicon glyphicon-book"></span> Дневник {{$authData['login']}}</font></a></li>
+      <li><a href="/logout" style="color:#B22222"><font size="3"><span class="glyphicon glyphicon-log-in"></span> Выйти </font></a></li>
 
   @endif
 
     </ul>
   </div>
 </nav>
-
-
-<form action="/search" method="POST">
-<div class="container">
-  <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <div id="imaginary_container"> 
-                <div class="input-group stylish-input-group">
-                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                    <b>
-                    <input type="text" name="search_phrase" class="form-control"  placeholder="Я хочу найти..." style="color: black">
-                    </b>
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>  
-                    </span>
-                </div>
-            </div>
-        </div>
-  </div>
-</div>
-</form>
-
-<br>

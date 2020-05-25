@@ -33,11 +33,22 @@ Route::get('/user-profile', 'UserProfileController@index')->name('redirect_to_us
 //Route for Save AJAX
 Route::post('/statistics', 'StatisticsController@saveProgress');
 
+//Route for Creating Course
+Route::get('/create', 'CreateCourseController@showUploadForm');
+
 //Route for Playlist Page
 Route::get('/playlist/{playlist_id}', 'PlaylistController@showPlaylistVideosEntryPoint')->name('playlist_page');
 
-//Route for finding video in certain category
-Route::get('/{category1}/{category2?}/{category3?}/{category4?}/{category5?}', ['uses' =>'CategoryController@categoryConrtollerEntryPoint']);
+//Route for Education plan of topic
+Route::get('/программирование/php/', 'EducationPlanController@showPlanProgrammingPHP');
 
+//Route for Education plan of topic
+Route::get('/менеджмент/продукт/', 'EducationPlanController@showPlanManagementProduct');
+
+//Route for Education plan of topic
+Route::get('/программирование/javascript/', 'EducationPlanController@showPlanProgrammingJavaScript');
+
+//Route for finding video in certain category
+Route::get('/{category}/{subcategory}/{playlist}/{video}', ['uses' =>'VideoController@videoConrtollerEntryPoint']);
 
 
